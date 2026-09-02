@@ -11,14 +11,14 @@ Moiré patterns arise when two periodic lattices of nanoparticles overlap at dif
 
 ## Repository Structure
 
-├── main.m                                    # Main simulation script
-├── lattice_generator_grain_boundary_size.m   # Lattice generation with grain boundaries
-├── utils/                                    # Utility functions (bokeh, rod_simple, Gaussian_beam, etc.)
-├── MTFmatrix512.mat                          # Modulation Transfer Function matrix
-├── train/                                    # Output: simulated training images
-├── label/                                    # Output: ground truth labels
-├── training.ipynb                            # Model training notebook
-└── README.md
+    main.m                                    # Main simulation script
+    lattice_generator_grain_boundary_size.m   # Lattice generation with grain boundaries
+    utils/                                    # Utility functions (bokeh, rod_simple, Gaussian_beam, etc.)
+    MTFmatrix512.mat                          # Modulation Transfer Function matrix
+    train/                                    # Output: simulated training images
+    label/                                    # Output: ground truth labels
+    training.ipynb                            # Model training notebook
+    README.md
 
 ## Simulation (MATLAB)
 
@@ -61,10 +61,10 @@ The simulation includes:
 
 ### Requirements
 
-tensorflow>=2.0
-keras
-numpy
-pillow
+- tensorflow>=2.0
+- keras
+- numpy
+- pillow
 
 ### Usage
 
@@ -72,13 +72,13 @@ pillow
 
 2. Load data and train:
 
-imgs, label = load_data(img_path='train/', label_path='label/')
-model = get_unet()
-model.fit(imgs, label, batch_size=2, epochs=20, validation_split=0.2)
+    imgs, label = load_data(img_path='train/', label_path='label/')
+    model = get_unet()
+    model.fit(imgs, label, batch_size=2, epochs=20, validation_split=0.2)
 
 3. Run predictions:
 
-preds = model.predict(test_imgs)
+    preds = model.predict(test_imgs)
 
 ### Model Architecture
 
@@ -103,4 +103,3 @@ U-Net with:
 - Channel 2: Layer 2 particles
 - Channel 3: Background
 - Binary values (0 or 1)
-
